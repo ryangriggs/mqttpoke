@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- mqttpoke (c) 2024 Ryan Griggs. All rights reserved.
+	Released under MIT license.
+	https://github.com/ryangriggs/mqttpoke
+-->
+<head>
+	<title>mqttpoke</title>
+	<link rel="stylesheet" href="./mqttpoke.css">
+	<script src="./jquery3.7.1.js"></script>
+    <script src="./mqtt.js"></script>
+    <script src="./moment.js"></script>
+    <script src="./cookie.js"></script>
+</head>
+<body>
+    <div class="connection">
+        URI: <input type="text" id="uri" value="mqtts://">
+        Topic: <input type="text" id="topic" value="">
+        Username: <input type="text" id="username" value="">
+        Password: <input type="password" id="password" value=""> 
+        <button id="btnConnect">Connect</button>
+        <button id="btnItemsClear" onclick="$('.data .item').not('.template').remove();">Clear Messages</button>
+        <button id="btnSubscribe">Subscribe To...</button>
+    </div>
+
+    <div class="data" id="data">
+        <table>
+            <tr>
+                <th>Topic</th>
+                <th>Message</th>
+                <th>Count</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+            <tr class="item template">
+                <td class="topic"></td>
+                <td class="message">
+                    <div class="bool display">
+                        <input type="checkbox" class="value">
+                    </div>
+                    <div class="text int16s int32s float32 display">
+                        <input type="text" class="value">
+                    </div>
+                </td>
+                <td class="counter">0</td>
+                <td class="type">
+                    <select class="value" onchange="formatData(this)">
+                        <option value="text">Raw Text</option>
+                        <option value="bool">Boolean</option>
+                        <option value="int16s">int16s: 16-bit signed integer</option>
+                        <option value="int32s">int32s: 32-bit signed integer</option>
+                        <option value="float32">float32: 32-bit floating point</option>
+                    </select>
+                </td>
+                <td class="buttons">
+                    <button class="btnItemPublish">Publish</button>
+                    <button class="btnItemRemove">Remove</button>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="log" id="log">
+        <button id="btnLogClear" onclick="$('.log .entry').not('.template').remove();">Clear</button>
+        <div class="entry template">
+            <span class="date">M/D/YYYY h:mm:ss a</span>
+            <span class="message">Message</span>
+        </div>
+    </div>
+
+    <script src="mqttpoke.js"></script>
+</body>
+</html>
