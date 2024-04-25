@@ -1,0 +1,69 @@
+/* mqttpoke (c) 2024 Ryan Griggs. All rights reserved.
+Released under MIT license.
+https://github.com/ryangriggs/mqttpoke
+*/
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.template
+{
+    display: none;
+}
+
+.connection
+{
+    border-bottom: 4px solid black;
+    height: 40px;
+    background-color: #666;
+}
+
+.data
+{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 60%;
+    overflow: scroll;
+}
+
+.data .item
+{
+    border-bottom: 1px solid #666;
+}
+
+.data .item:nth-child(even)
+{
+    background-color: #999;
+}
+
+.data .item:hover
+{
+    background-color: yellow;
+}
+
+.data .item .message .bool
+{
+    display: none;
+}
+
+.log
+{
+    height: calc(40% - 40px);
+    overflow: scroll;
+    border-top: 4px solid #333;
+    background-color: #aaa;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.log .entry
+{
+    border-bottom: 1px solid #666;
+}
