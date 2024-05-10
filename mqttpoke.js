@@ -14,6 +14,15 @@ $(document).ready(function() {
 		this.select();
 	});
 
+	// Hotkeys on value boxes:
+	$(".item input.value").on('keydown', function(event) {
+		// Enter key: publish
+		if (event.keyCode == 13)
+		{
+			$(this).closest('.item').find('.btnItemPublish').click();
+		}
+	});
+
 	$('#btnConnect').on('click', function() {
 		connect();
 	});
