@@ -94,7 +94,7 @@ function formatData(select)
 	el.find('.message .display').hide();
 	el.find(`.message .${type}`).show();
 
-	Cookies.set(`Type: ${topic}`, type);
+	Cookies.set(`Type: ${topic}`, type, { expires: 365 });
 
 	setValue(el, message);
 }
@@ -181,10 +181,10 @@ function connect()
 	}
 
 	
-	Cookies.set('uri', uri);
-	Cookies.set('username', username);
-	Cookies.set('password', password);
-	Cookies.set('topic', topic);
+	Cookies.set('uri', uri, { expires: 365 });
+	Cookies.set('username', username, { expires: 365 });
+	Cookies.set('password', password, { expires: 365 });
+	Cookies.set('topic', topic, { expires: 365 });
 
 	log("Connecting to MQTT server...");
 
