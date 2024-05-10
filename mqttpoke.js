@@ -173,6 +173,14 @@ function connect()
 	const password = $("#password").val();
 	const topic = $("#topic").val();
 
+	// Disconnect any existing connection
+	if (client) 
+	{
+		log("Closing existing MQTT connection...");
+		client.end(); 
+	}
+
+	
 	Cookies.set('uri', uri);
 	Cookies.set('username', username);
 	Cookies.set('password', password);
