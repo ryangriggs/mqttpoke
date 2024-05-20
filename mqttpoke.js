@@ -162,7 +162,7 @@ function setValue(element, message)
 	// let count = parseInt(element.find('.counter').text());
 	// count++;
 	// element.find('.counter').text(count);
-	element.find('.counter').text(new moment().format('HH:mm:ss.S YYYY-MM-DD'));
+	element.find('.updated').text(new moment().format('HH:mm:ss.S YYYY-MM-DD'));
 }
 
 let client;
