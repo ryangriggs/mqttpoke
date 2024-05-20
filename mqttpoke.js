@@ -159,9 +159,10 @@ function setValue(element, message)
 	
 	element.prop('message', message);
 	element.find(`.message .${type} .value`).val(v);	// Sets the text value for all types (invisible for boolean type)
-	let count = parseInt(element.find('.counter').text());
-	count++;
-	element.find('.counter').text(count);
+	// let count = parseInt(element.find('.counter').text());
+	// count++;
+	// element.find('.counter').text(count);
+	element.find('.counter').text(new Date.getUTCDate());
 }
 
 let client;
