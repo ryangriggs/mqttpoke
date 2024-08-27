@@ -5,7 +5,7 @@ Most MQTT pub/sub web apps don't support native binary datatypes (signed/unsigne
 
 No server required: runs in modern browsers.  
 
-[Run the app on Github Pages](https://x)
+[Run the app on Github Pages](https://ryangriggs.github.io/mqttpoke/)
 
 **FIREFOX BUG: in Firefox you must change websockets configuration to use HTTP/1.1 instead of HTTP/2 or wss (mqtt) connections will fail.  See [this article](https://support.mozilla.org/en-US/questions/1324001) for details.**
 - Open [about:config](about:config)
